@@ -1,5 +1,6 @@
 # gesture_detector_with_preview
 This widget just show a widget in the long press and hide it after release.
+It's very similar to the instagram preview function.
 
 # Supported platforms
 * iOS

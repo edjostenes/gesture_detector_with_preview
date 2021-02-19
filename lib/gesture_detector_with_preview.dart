@@ -19,8 +19,7 @@ class GestureDetectorWithPreview extends StatelessWidget {
       onLongPress: () {
         _overlayEntry = OverlayEntry(builder: (context) => AnimatedDialog(
           child: this.preview,
-        )
-        );
+        ));
         Overlay.of(context).insert(_overlayEntry);
       },
       onLongPressEnd: (details) {
