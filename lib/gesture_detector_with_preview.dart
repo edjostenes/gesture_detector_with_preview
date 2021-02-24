@@ -1,9 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class GestureDetectorWithPreview extends StatelessWidget {
   final GestureTapCallback onTap;
   final Widget child;
   final Widget preview;
+  final AsyncCallback onBeforeShowPreview;
 
   OverlayEntry _overlayEntry;
 
@@ -11,12 +13,14 @@ class GestureDetectorWithPreview extends StatelessWidget {
     @required this.child,
     @required this.preview,
     @required this.onTap,
+    this.onBeforeShowPreview,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onLongPress: () {
+      onLongPress: () async {
+        await this.onBeforeShowPreview?.call();
         _overlayEntry = OverlayEntry(builder: (context) => AnimatedDialog(
           child: this.preview,
         ));

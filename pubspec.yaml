@@ -1,6 +1,6 @@
 name: gesture_detector_with_preview
 description: A simple gesture detector widget with preview.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/edjostenes/gesture_detector_with_preview
 
 environment:
